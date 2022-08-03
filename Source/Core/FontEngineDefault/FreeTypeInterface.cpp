@@ -184,7 +184,7 @@ void FreeType::GetFaceStyle(FontFaceHandleFreetype in_face, String* font_family,
 
 	if (weight)
 	{
-		TT_OS2* font_table = (TT_OS2*)FT_Get_Sfnt_Table(face, FT_SFNT_OS2);
+		TT_OS2* font_table = (TT_OS2*)FT_Get_Sfnt_Table(face, ft_sfnt_os2);
 		if (font_table && font_table->usWeightClass != 0)
 			*weight = (Style::FontWeight)font_table->usWeightClass;
 		else

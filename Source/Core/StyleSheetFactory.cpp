@@ -226,7 +226,7 @@ UniquePtr<const StyleSheetContainer> StyleSheetFactory::LoadStyleSheetContainer(
 		}
 	}
 
-	return new_style_sheet;
+	return UniquePtr<const StyleSheetContainer>(new_style_sheet.release());
 }
 
 } // namespace Rml
