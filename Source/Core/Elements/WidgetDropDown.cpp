@@ -98,10 +98,9 @@ void WidgetDropDown::OnUpdate()
 		// Find the best option element to select in the following priority:
 		//  1. First option with 'selected' attribute.
 		//  2. An option whose 'value' attribute matches the select 'value' attribute.
-		//  3. The first option.
 		// The select element's value may change as a result of this.
 		const String select_value = parent_element->GetAttribute("value", String());
-		Element* select_option = selection_element->GetFirstChild();
+		Element* select_option = nullptr;
 
 		const int num_options = selection_element->GetNumChildren();
 		for (int i = 0; i < num_options; i++)
