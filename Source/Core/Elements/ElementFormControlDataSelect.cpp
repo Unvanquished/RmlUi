@@ -69,6 +69,8 @@ void ElementFormControlDataSelect::OnUpdate()
 			BuildOptions();
 		}
 	}
+
+	ElementFormControlSelect::OnUpdate();
 }
 
 // Checks for changes to the data source or formatting attributes.
