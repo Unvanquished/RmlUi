@@ -31,6 +31,7 @@
 
 #include "../Config/Config.h"
 
+#include <cstdint>
 #include <cstdlib>
 #include <memory>
 
