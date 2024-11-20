@@ -26,6 +26,9 @@
  *
  */
 
+#ifndef RMLUI_DEBUGGER_COMMONSOURCE_H
+#define RMLUI_DEBUGGER_COMMONSOURCE_H
+
 static const char* common_rcss = R"RCSS(
 body
 {
@@ -195,3 +198,5 @@ handle#size_handle
 	background-color: #888;
 }
 )RCSS";
+
+#endif

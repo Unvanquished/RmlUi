@@ -37,8 +37,8 @@
 
 namespace Rml {
 
-static const float DEFAULT_REPEAT_DELAY = 0.5f;
-static const float DEFAULT_REPEAT_PERIOD = 0.1f;
+static const float SCROLL_ARROW_REPEAT_DELAY = 0.5f;
+static const float SCROLL_ARROW_REPEAT_PERIOD = 0.1f;
 
 WidgetScroll::WidgetScroll(Element* _parent)
 {
@@ -160,7 +160,7 @@ void WidgetScroll::Update()
 			arrow_timers[i] -= delta_time;
 			while (arrow_timers[i] <= 0)
 			{
-				arrow_timers[i] += DEFAULT_REPEAT_PERIOD;
+				arrow_timers[i] += SCROLL_ARROW_REPEAT_PERIOD;
 				SetBarPosition(i == 0 ? OnLineDecrement() : OnLineIncrement());
 			}
 		}
@@ -432,13 +432,13 @@ void WidgetScroll::ProcessEvent(Event& event)
 	{
 		if (event.GetTargetElement() == arrows[0])
 		{
-			arrow_timers[0] = DEFAULT_REPEAT_DELAY;
+			arrow_timers[0] = SCROLL_ARROW_REPEAT_DELAY;
 			last_update_time = Clock::GetElapsedTime();
 			SetBarPosition(OnLineDecrement());
 		}
 		else if (event.GetTargetElement() == arrows[1])
 		{
-			arrow_timers[1] = DEFAULT_REPEAT_DELAY;
+			arrow_timers[1] = SCROLL_ARROW_REPEAT_DELAY;
 			last_update_time = Clock::GetElapsedTime();
 			SetBarPosition(OnLineIncrement());
 		}

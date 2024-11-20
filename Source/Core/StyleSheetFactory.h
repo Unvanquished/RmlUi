@@ -78,6 +78,8 @@ private:
 	// Custom complex selectors available for style sheets.
 	using SelectorMap = UnorderedMap<String, StructuralSelectorType>;
 	SelectorMap selectors;
+
+	static UniquePtr<StyleSheetFactory> instance; // singleton
 };
 
 } // namespace Rml

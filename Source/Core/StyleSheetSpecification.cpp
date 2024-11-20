@@ -43,7 +43,7 @@
 
 namespace Rml {
 
-static StyleSheetSpecification* instance = nullptr;
+StyleSheetSpecification* StyleSheetSpecification::instance = nullptr;
 
 
 struct DefaultStyleSheetParsers {

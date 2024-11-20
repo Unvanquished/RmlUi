@@ -133,6 +133,8 @@ private:
 	PropertySpecification properties;
 
 	UniquePtr<DefaultStyleSheetParsers> default_parsers;
+
+	static StyleSheetSpecification* instance; // singleton
 };
 
 } // namespace Rml
