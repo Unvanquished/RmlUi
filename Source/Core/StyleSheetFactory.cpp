@@ -36,7 +36,7 @@
 
 namespace Rml {
 
-static UniquePtr<StyleSheetFactory> instance;
+UniquePtr<StyleSheetFactory> StyleSheetFactory::instance;
 
 StyleSheetFactory::StyleSheetFactory() :
 	selectors{

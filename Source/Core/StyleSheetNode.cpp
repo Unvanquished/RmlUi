@@ -37,11 +37,6 @@
 
 namespace Rml {
 
-static inline bool IsTextElement(const Element* element)
-{
-	return element->GetTagName() == "#text";
-}
-
 StyleSheetNode::StyleSheetNode()
 {
 	CalculateAndSetSpecificity();
@@ -329,7 +324,7 @@ bool StyleSheetNode::TraverseMatch(const Element* element) const
 		{
 			// First check if our sibling is a text element and if so skip it. For the descendant/child combinator above we can omit this step since
 			// text elements don't have children and thus any ancestor is not a text element.
-			if (IsTextElement(element))
+			if (element->GetTagName() == "#text")
 				continue;
 			else if (parent->Match(element) && parent->TraverseMatch(element))
 				return true;
